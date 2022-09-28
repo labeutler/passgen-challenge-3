@@ -39,6 +39,13 @@ function writePassword() {
 // Add event listener to generate button (GIVEN)
 generateBtn.addEventListener("click", writePassword);
 
+//create function
+function generatePassword() {
+  //input required password length (between 8 and 128)
+  passwordLength = prompt ("REQUIRED: Please enter how many charachters you would like your password to be. (8-128 characters");
+  console.log ("Password length " + passwordLength);
+}
+
 // Assign min/max length
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min) ) + min;
