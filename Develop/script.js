@@ -1,31 +1,24 @@
 // Assignment Code (GIVEN)
 var generateBtn = document.querySelector("#generate");
 
-// Items needed to achieve password criteria.
-  // password length at min 8 & max 128
-  var passwordLength;
-  // include lowercase Yes/No
-  var confirmLower;
-  // include uppercase Yes/No
-  var confirmUpper;
-  // include numeric Yes/No
-  var confirmNumber;
-  // include special characters Yes/No
-  var confirmSpecial;
-  // confrim choices
-  var listChoices
+//Criteria needing to be collected
+var passwordLength;
+var confirmLower;
+var confirmUpper;
+var confirmNumbers;
+var confirmSpecial;
+var userResponse;
 
-// List options available
-  //password length
+// array if including lowercase
+var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+// array if including uppercase
+var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+// array if including numeric
+var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+// array if including special characters 
+var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "=", "?", "/"];
+// confrim choices
 
-  //lower case
-  var caseLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  //upper case
-  var caseUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-  //numeric
-  var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  //special characters
-  var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "=", "?", "/"];
 
 // Write password to the #password input (GIVEN)
 function writePassword() {
@@ -39,17 +32,67 @@ function writePassword() {
 // Add event listener to generate button (GIVEN)
 generateBtn.addEventListener("click", writePassword);
 
+
+
 //create function
 function generatePassword() {
-  //input required password length (between 8 and 128)
-  passwordLength = prompt ("REQUIRED: Please enter how many charachters you would like your password to be. (8-128 characters");
-  console.log ("Password length " + passwordLength);
+  //request password length
+  passwordLength = prompt("Please provide the length of characters you want your password to be. (No less than 8 or greater than 128.)");
+  console.log("Password Length" + passwordLength);
+
+
+  if (!passwordLength) {
+    alert("Value Required");
+  }
+  else if (passwordLength < 8 || passwordLength > 128) {
+    passwordLength = prompt("You must choose between 8 and 128");
+    console.log("Password length " + passwordLength);
+  }
+  else {
+    confirmLower = confirm("Would you like lower case letters included?");
+    console.log("Lower case " + confirmLower);
+    confirmUpper = confirm("Would you like upper case included?");
+    console.log("Upper case " + confirmUpper);
+    confirmNumbers = confirm("Would you like numbers included?");
+    console.log("Number " + confirmNumbers);
+    confirmSpecial = confirm("Would you like special characters included?");
+    console.log("Special Character " + confirmSpecial);
+  };
+
+
+  
 }
 
-// Assign min/max length
-function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min) ) + min;
-}
+
+
+
+
+// //input required password length (between 8 and 128)
+// passwordLength = prompt("REQUIRED: Please enter how many charachters you would like your password to be. (8-128 characters");
+// console.log("Password length " + passwordLength);
+
+// //informing of required value
+// if (passwordLength === null) {
+//   alert("Value Required");
+
+// } else if (passwordLength < 8 || passwordLength > 128) {
+//   passwordLength = prompt("You must choose between 8 and 128");
+//   console.log("Password length " + passwordLength);
+// } else {
+//   confirmLower = confirm("Will this include lower case letters?");
+//   console.log("Lower case " + confirmLower);
+//   confirmUpper = confirm("Will this include upper case letters?");
+//   console.log("Upper case " + confirmUpper);
+//   confirmNumber = confirm("Will this include numbers?");
+//   console.log("Number " + confirmNumber);
+//   confirmSpecial = confirm("Will this include special characters?");
+//   console.log("Special Character " + confirmSpecial);
+// };
+
+// // Assign min/max length
+// function getRndInteger(min, max) {
+//   return Math.floor(Math.random() * (max - min) ) + min;
+// }
 
 // var password=document.getElementById("passwork");
 
@@ -75,5 +118,3 @@ function getRndInteger(min, max) {
 
 // WHEN the password is generated
 //   THEN the password is either displayed in an alert or written to the page
-
-
