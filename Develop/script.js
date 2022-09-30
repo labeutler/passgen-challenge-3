@@ -60,9 +60,33 @@ function generatePassword() {
     confirmSpecial = confirm("Would you like special characters included?");
     console.log("Special Character " + confirmSpecial);
   };
+  //None selected
+  if (!confirmLower && !confirmUpper && !confirmNumbers && !confirmSpecial) {
+    userResponse = alert("You MUST select at least ONE of the following creteria to be included: lower case, upper case, numbers or special characters.");
+  }
+  //If Only Upper Case is selected
+  else if (confirmUpper) {
+    userResponse = upperCase;
+    console.log(userResponse);
+  }
+  //If only Lower Case is selected
+  else if (confirmLower) {
+    userResponse = lowerCase;
+    console.log(userResponse);
+  }
+  //If only Numbers are selected
+  else if (confirmNumbers) {
+    userResponse = numbers;
+    console.log(userResponse);
+  }
+  //If only Special Characters are selected
+  else if (confirmSpecial) {
+    userResponse = special;
+    console.log(userResponse);
+  }
 
 
-  
+
 }
 
 
