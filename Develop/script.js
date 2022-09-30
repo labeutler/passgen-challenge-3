@@ -40,14 +40,16 @@ function generatePassword() {
   passwordLength = prompt("Please provide the length of characters you want your password to be. (No less than 8 or greater than 128.)");
   console.log("Password Length" + passwordLength);
 
-
+  //If value is NOT entered, response would be
   if (!passwordLength) {
     alert("Value Required");
   }
+  //if value IS entered and it is OUTSIDE of the required values
   else if (passwordLength < 8 || passwordLength > 128) {
     passwordLength = prompt("You must choose between 8 and 128");
     console.log("Password length " + passwordLength);
   }
+  //if value IS entered and it is WITHIN the required values, the following prompts that need to be answered by user.
   else {
     confirmLower = confirm("Would you like lower case letters included?");
     console.log("Lower case " + confirmLower);
