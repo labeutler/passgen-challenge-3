@@ -67,34 +67,6 @@ function generatePassword() {
 
 
 
-// //input required password length (between 8 and 128)
-// passwordLength = prompt("REQUIRED: Please enter how many charachters you would like your password to be. (8-128 characters");
-// console.log("Password length " + passwordLength);
-
-// //informing of required value
-// if (passwordLength === null) {
-//   alert("Value Required");
-
-// } else if (passwordLength < 8 || passwordLength > 128) {
-//   passwordLength = prompt("You must choose between 8 and 128");
-//   console.log("Password length " + passwordLength);
-// } else {
-//   confirmLower = confirm("Will this include lower case letters?");
-//   console.log("Lower case " + confirmLower);
-//   confirmUpper = confirm("Will this include upper case letters?");
-//   console.log("Upper case " + confirmUpper);
-//   confirmNumber = confirm("Will this include numbers?");
-//   console.log("Number " + confirmNumber);
-//   confirmSpecial = confirm("Will this include special characters?");
-//   console.log("Special Character " + confirmSpecial);
-// };
-
-// // Assign min/max length
-// function getRndInteger(min, max) {
-//   return Math.floor(Math.random() * (max - min) ) + min;
-// }
-
-// var password=document.getElementById("passwork");
 
 // GIVEN I need a new, secure password
 
