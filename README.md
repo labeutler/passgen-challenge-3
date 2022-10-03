@@ -32,36 +32,30 @@ N/A
 ## Usage
 
 When opening the Password Generator, you will see a dialog box with a red button below saying, "Generate Password".  
-![alt text](Develop/images/User_screen.png)
+![alt text](./Assets/images/User_screen.png)
 
 Once you click on the button...
-![alt text](Develop/images/Generate.png)
+![alt text](./Assets/images/Generate.png)
 
 The following screen will present asking you to enter a number value from 8 to 128...
-![alt text](Develop/images/pick_value.png)
+![alt text](./Assets/images/pick_value.png)
 
 If nothing is entered, you will see the following...
-![alt text](Develop/images/No_value.png)
+![alt text](./Assets/images/No_value.png)
 
 As long as a value is entered, the following prompts will present and by selecting "OK", that will agree to have the item added.  By selecting "Cancel", the item will be excluded from your password criteria.
-![alt text](Develop/images/Number_prompt.png)
-![alt text](Develop/images/Character_prompt.png)
-![alt text](Develop/images/Upper_prompt.png)
-![alt text](Develop/images/lower_prompt.png)
+![alt text](./Assets/images/Number_prompt.png)
+![alt text](./Assets/images/Character_prompt.png)
+![alt text](./Assets/images/Upper_prompt.png)
+![alt text](./Assets/images/lower_prompt.png)
 
 If you select "Cancel" on all of the criteria prompts, you will see the following image...
-![alt text](Develop/images/Opt_declined.png)
+![alt text](./Assets/images/Opt_declined.png)
 
 As long as you selected something, you will see a password populate in the dialog box on the main screen.  Below is an example of a password 18 characters long and selecting all options from the prompts...
-![alt text](Develop/images/Example_18_all.png)
+![alt text](./Assets/images/Example_18_all.png)
 
 If you decided you want to try another password option, you can just click on "Generate Password" again and the prompts will start over.
-
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
-
-![alt text](assets/images/screenshot.png)
 
 ## Credits
 
