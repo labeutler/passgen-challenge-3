@@ -39,29 +39,19 @@ special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",
 // Numeric character array
 number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 // Alphabetical characters array
-alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-// Space is for the Uppercase conversion
-space = [];
+lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+// Upper case alphabetical characters array
+upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 var choices;
-
-var toUpper = function (x) {
-    return x.toUpperCase();
-};
-
-alpha2 = alpha.map(toUpper);
 
 // Write password to the #password input (GIVEN)
 function writePassword() {
   var password = generatePassword();
-  
 }
 
 //Add event listener to generate button (GIVEN) 
-generateBtn.addEventListener("click", function () {
-    newpass = generatePassword();
-    document.getElementById("password").placeholder = newpass;
-});
+generateBtn.addEventListener("click", writePassword)
 
 // function to generate password
 function generatePassword() {
@@ -74,7 +64,6 @@ function generatePassword() {
       
         enter = parseInt(prompt("You must choose a value between 8 and 128"));
        
-
     } else {
         // The four prompts that user can select from, at least one needs to be selected.
         confirmNumber = confirm("Would you like numbers to be included in your password?");
@@ -91,23 +80,23 @@ function generatePassword() {
     // If user selects to include all four options.
     else if (confirmSpecial && confirmNumber && confirmUpper && confirmLower) {
 
-        choices = special.concat(number, alpha, alpha2);
+        choices = special.concat(number, lower, upper);
     }
     // If user selects to include Special characters, numbers and upper case letters.
     else if (confirmSpecial && confirmNumber && confirmUpper) {
-        choices = special.concat(number, alpha2);
+        choices = special.concat(number, upper);
     }
     // If user selects to include special characters, numbers and lower case letters.
     else if (confirmSpecial && confirmNumber && confirmLower) {
-        choices = special.concat(number, alpha);
+        choices = special.concat(number, lower);
     }
     // If users selects to include special characters, lower and upper case letters and 
     else if (confirmSpecial && confirmLower && confirmUpper) {
-        choices = special.concat(alpha, alpha2);
+        choices = special.concat(lower, upper);
     }
     // If user selects to include numbers, lower and upper case letters
     else if (confirmNumber && confirmLower && confirmUpper) {
-        choices = number.concat(alpha, alpha2);
+        choices = number.concat(lower, upper);
     }
 
     // If user selects to include special characters and numbers
@@ -115,20 +104,20 @@ function generatePassword() {
         choices = special.concat(number);
     // If user selects to include special characters and lower case letters
     } else if (confirmSpecial && confirmLower) {
-        choices = special.concat(alpha);
+        choices = special.concat(lower);
     // If user selects to include special characters and upper case letters
     } else if (confirmSpecial && confirmUpper) {
-        choices = special.concat(alpha2);
+        choices = special.concat(upper);
     }
     // If user selects to include lower case letters and numbers
     else if (confirmLower && confirmNumber) {
         choices = alpha.concat(number);
     // If user selects to include lower and upper case letters
     } else if (confirmLower && confirmUpper) {
-        choices = alpha.concat(alpha2);
+        choices = lower.concat(upper);
     // if user selects to include numbers and upper case letters
     } else if (confirmNumber && confirmUpper) {
-        choices = number.concat(alpha2);
+        choices = number.concat(upper);
     }
     // If user selects to include only special characters
     else if (confirmSpecial) {
@@ -140,23 +129,23 @@ function generatePassword() {
     }
     // If users selects to include only lower case letters
     else if (confirmLower) {
-        choices = alpha;
+        choices = lower;
     }
     // If users select to include only upper case letters
     else if (confirmUpper) {
-        choices = space.concat(alpha2);
+        choices = upper;
     };
 
-
+    //place holder for password
     var password = [];
 
-   
     // Random selection of all variables: 
     for (var i = 0; i < enter; i++) {
         var pickChoices = choices[Math.floor(Math.random() * choices.length)];
         password.push(pickChoices);
     }
-  
+    
+    //used to combine users input for password criteria
     var newpass = password.join("");
     UserInput(newpass);
     return newpass;
@@ -167,7 +156,7 @@ function UserInput(newpass) {
     document.getElementById("password").textContent = newpass;
 
 }
-
+// GIVEN portion of "write password to the #password input."
 var passwordText = document.querySelector("#password");
 copy.addEventListener("click", function () {
     copyPassword();
