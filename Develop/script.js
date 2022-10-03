@@ -111,7 +111,7 @@ function generatePassword() {
     }
     // If user selects to include lower case letters and numbers
     else if (confirmLower && confirmNumber) {
-        choices = alpha.concat(number);
+        choices = lower.concat(number);
     // If user selects to include lower and upper case letters
     } else if (confirmLower && confirmUpper) {
         choices = lower.concat(upper);
