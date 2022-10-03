@@ -29,6 +29,10 @@ THEN the password is either displayed in an alert or written to the page
 
 N/A
 
+## Linki
+
+https://labeutler.github.io/passgen-challenge-3/
+
 ## Usage
 
 When opening the Password Generator, you will see a dialog box with a red button below saying, "Generate Password".  
